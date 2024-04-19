@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+    "name": "dieharder",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+    },
+    // add any required extensions that must be pre-installed in the devcontainer
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.makefile-tools"
+            ]
+        }
+    },
+    "mounts": [
+        // Source: https://github.com/microsoft/vscode-remote-release/issues/5823
+        "source=dieharder-home-dir,target=/home/vscode,type=volume",
+        "target=/home/vscode/.vscode-server,type=volume"
+    ]
+}
